@@ -1,12 +1,22 @@
+import React, { useState } from 'react';
+
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import Card from "../UI/Card";
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
+
+  //function clickHandler(){}
+
+  // With destructing we can store the 2 values that use state outputs
+  //1st one is the param 
+  //2nd one is the function to output the udpated vlaues
+  const [title, setTitle] = useState(props.title);
 
   //arrow function that is being pointed too
   const clickHandler = () => {
-    console.log('clicked!!!');
+    setTitle('Updated');
+    console.log(title);
   }
 
   return(
@@ -16,7 +26,7 @@ function ExpenseItem(props) {
   
     <div className='expense-item__description'>
       {/* to inject const/variables you must use {} */}
-      <h2 >{props.title}</h2>
+      <h2 >{title}</h2>
       <div className='expense-item__price'>${props.amount}</div>
     </div>
     <button onClick={clickHandler}>Change Title</button>

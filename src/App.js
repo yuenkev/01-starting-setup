@@ -1,5 +1,6 @@
 // import ExpenseItem from "./components/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
 
@@ -27,11 +28,12 @@ const App = () => {
 
     return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense></NewExpense>
       {/* You import components into the code by calling the name of the import */}
 
       {/* i forwarded the array into a param called "props" */}
       <Expenses items={expenses}></Expenses>
+
   
     </div>
   );
