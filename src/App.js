@@ -26,9 +26,16 @@ const App = () => {
       },
     ];
 
+    //the param we passed into the function inside of <NewExpense> will be the new expense and we can log it her
+    const addExpenseHandler = expense => {
+
+      console.log('In App.js');
+      console.log(expense);
+    }
+
     return (
     <div>
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
       {/* You import components into the code by calling the name of the import */}
 
       {/* i forwarded the array into a param called "props" */}
